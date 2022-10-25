@@ -50,22 +50,44 @@
 #         else:
 #             print("Your increment is $400")
 #Question 4
-number1 = int(input("Enter a starting number: "))
-number2 = int(input("Enter a ending number: "))
+# number1 = int(input("Enter a starting number: "))
+# number2 = int(input("Enter a ending number: "))
 
-if (number1 % 2 == 0):
-    number1 + 1
-    if (number1 < number2):
-        for i in range(number1, number2, 2):
-            print(i,end = "\t")
-    else:
-        for j in range(number2, number1, -2):
-            print(j,end = "\t")
-if (number2 % 2 == 0):
-    number2 + 1
-    if (number1 < number2):
-        for i in range(number1, number2, 2):
-            print(i,end = "\t")
-    else:
-        for j in range(number2, number1, -2):
-            print(j,end = "\t")
+# if (number1 > number2):
+#     for i in range(number1, number2, -1):
+#         if (i % 2 == 1):
+#             print(i, end="\t")
+#         else:
+#             pass
+# else:
+#     for i in range(number1, number2, 1):
+#         if (i % 2 == 1):
+#             print(i, end="\t")
+#         else:
+#             pass
+#Question 5
+# number1 = int(input("Enter a starting number: "))
+# number2 = int(input("Enter a ending number: "))
+
+# if (number1 > number2):
+#     for i in range(number1, number2, -1):
+#         if (i % 2 == 0):
+#             print(i, end="\t")
+#         else:
+#             pass
+# else:
+#     for i in range(number1, number2, 1):
+#         if (i % 2 == 0):
+#             print(i, end="\t")
+#         else:
+#             pass
+#Question 6
+number =  int(input("Please enter a number or Q to stop: "))
+number_total = number
+
+while number == "Q":
+    number_total = number_total + number
+    print(f"Current total is {number_total}")
+    number = number.upper()
+    # if (number == "Q"):
+    #     break
