@@ -82,17 +82,23 @@
 #         else:
 #             pass
 #Question 6
-number = ""
-number_total = 0
-# number_total = number
+# number = ""
+# number_total = 0
+# # number_total = number
 
-while number != "Q":
-    number = input("Please enter a number or Q to stop: ")
-    if (number.isnumeric() == False and number == "Q"):
-        print(f"Final sum is {number_total}")
-        break
-    elif (number.isnumeric() == False and number != "Q"):
-        print("Please enter a valid number!")
-    else:
-        number_total = int(number) + number_total
-        print(f"Current total is {number_total}")
+# while number != "Q":
+#     number = input("Please enter a number or Q to stop: ")
+#     if (number.isnumeric() == False and number == "Q"):
+#         print(f"Final sum is {number_total}")
+#         break
+#     elif (number.isnumeric() == False and number != "Q"):
+#         print("Please enter a valid number!")
+#     else:
+#         number_total = int(number) + number_total
+#         print(f"Current total is {number_total}")
+#Question 7
+try:
+    number = int(input("Please enter an integer: "))
+    print("Great, you have successfully entered an integer!")
+except ValueError():
+    print("No valid integer! Please try again ...")
