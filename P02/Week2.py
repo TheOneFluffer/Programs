@@ -49,6 +49,7 @@
 #             print("Your increment is $300")
 #         else:
 #             print("Your increment is $400")
+
 #Question 4
 # number1 = int(input("Enter a starting number: "))
 # number2 = int(input("Enter a ending number: "))
@@ -65,6 +66,7 @@
 #             print(i, end="\t")
 #         else:
 #             pass
+
 #Question 5
 # number1 = int(input("Enter a starting number: "))
 # number2 = int(input("Enter a ending number: "))
@@ -81,10 +83,10 @@
 #             print(i, end="\t")
 #         else:
 #             pass
+
 #Question 6
 # number = ""
 # number_total = 0
-# # number_total = number
 
 # while number != "Q":
 #     number = input("Please enter a number or Q to stop: ")
@@ -96,9 +98,29 @@
 #     else:
 #         number_total = int(number) + number_total
 #         print(f"Current total is {number_total}")
+
 #Question 7
-try:
-    number = int(input("Please enter an integer: "))
-    print("Great, you have successfully entered an integer!")
-except ValueError():
-    print("No valid integer! Please try again ...")
+# number = ""
+# while True:
+#     try:
+#         number = int(input("Enter a number: "))
+#         print("Great, you have successfully entered an integer")
+#     except ValueError as ve:
+#         print("No valid integer! Please try again ...")
+
+#Question 8
+# number = ""
+
+# while True:
+#     try:
+#         number = int(input("Enter a number: "))
+#         if int(number) % 2 == 0:
+#             print(f"{number} is even")
+#             break
+#         else:
+#             print(f"{number} is odd")
+#             break
+#     except TypeError as ve:
+#         print("You did not enter a number")
+#     except ValueError as ve:
+#         print("You did not enter a number")
