@@ -25,11 +25,18 @@ Features needed:
     Access control:
     Add, delete or edit:
     Report:
+
+Credit:
+    https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c Hangman ASCII github
+    https://www.youtube.com/watch?v=m4nEnsavl6w Hangman Tutorial
 """
 
 #importing stuff
-import math
-import pandas as pd
+import random
+# import pandas as pd
+from Animals import word_list_animals_easy
+from Animals import word_list_animals_medium
+from Animals import word_list_animals_hard
 #Allow for user input
 
 difficulty_settings = "" #Allows selection of difficulty   input("Please enter a difficulty:\n 1. Easy\n 2. Medium\n 3. Hard\n > ")
@@ -53,10 +60,86 @@ regexstr = "/^[a-zA-Z]+$/"
 #         except:
 #             print("Pls enter a number")
 
+def get_word():
+    word = random.choice(word_list_animals_easy)
+    return word.upper()
+
+def display_hangman(tries):
+    stages = [  """
+         _____
+         |    |
+         |    O
+         |   /|\\
+         |   / \\
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    O
+         |   /|\\
+         |   / 
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    O
+         |   /|\\
+         |   
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    O
+         |   /| 
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    O
+         |    | 
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    
+         |    
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+         """
+    ]
+    return stages[tries]
+
+def player_count():
+    return
+
 def Hiscore():
     print("Hi-scores of other players: ")
     
-
 def Credits(Cont): 
     print(".-=~=-.                                                                 .-=~=-.")
     print("(__  _)-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-(__  _)")
