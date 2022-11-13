@@ -5,10 +5,10 @@ https://www.youtube.com/watch?v=m4nEnsavl6w Hangman Tutorial
 '''
 
 import random
-from words import word_list_animals_easy
+from Color import word_list_color_simple, word_list_color_advanced
 
 def get_word():
-    word = random.choice(word_list_animals_easy)
+    word = random.choice(word_list_color_simple + word_list_color_advanced)
     return word.upper()
 
 def play(word):
@@ -16,7 +16,7 @@ def play(word):
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 5
+    tries = 6
     print("H A N G M A N")
     print(display_hangman(tries))
     print(word_completion)

@@ -5,12 +5,12 @@ https://www.youtube.com/watch?v=m4nEnsavl6w Hangman Tutorial
 '''
 
 import random
-from Color import category
+from word_list import simple_words, advanced_words
 
 def get_word():
-    print(f"\nSelect the category from the following list: {list(category.keys())}")
+    print(f"\nSelect the category from the following list: {list(simple_words.keys())}")
     category_key = input("\nEnter the category name: ").lower()
-    word = random.choice(category[category_key])
+    word = random.choice(simple_words[category_key])
     return word.lower()
 
 def play(word, username):
@@ -67,9 +67,11 @@ def play(word, username):
         print(word_completion)
         print("\n")
     if guessed:
-        print(f"Congratulations, The secret word is {word}. You win")
+        description = simple_words.get(word)
+        print(f"Congratulations, The secret word is {word}. You win\n{description}")
     else:
         print("Maximum number of guesses!")
+        word_desc = word
         print(f"After 5 incorrect guesses, The word was", word)
     # return points
 
@@ -143,9 +145,9 @@ def display_hangman(tries):
     ]
     return stages[tries]
 
-def username():
-    username = input("Please enter name: ")
-    return username
+# def username():
+#     username = input("Please enter name: ")
+#     return username
 
 def main():
     word = get_word()

@@ -32,6 +32,7 @@ Features needed:
 
 #User selection screen
 import admin as admin
+import Hangman_art as hangman_art
 
 selection = ""
 choice = ""
@@ -39,21 +40,23 @@ isFound = True
 
 while isFound:
     try:
-        print("Welcome to the hangman game: \n 1. Start Game \n 2. Show Hi-Score \n 3. Credits \n 4. Exit")
+        print("Welcome to the hangman game: \n 1. Start Game \n 2. Show Hi-Score \n 3. Credits \n 4. Admin Login \n 5. Exit")
         selection = input('Enter choice: ')
         selection = int(selection)
-        if selection != 4:
+        if selection != 5:
             match selection:
                 case 1:
-                    # StartGame(players, username, difficulty_settings)
+                    admin.main()
                     pass
                 case 2:
-                    print("Hello")
+                    admin.Hiscore()
                 case 3:
                     admin.Credits(choice)
                     pass
                     # print("Star walkinnn")
                 case 4:
+                    print("Men")
+                case 5:
                     print("Exit")
                 case _:
                     print("Please type in a selection within 1 to 4!")
