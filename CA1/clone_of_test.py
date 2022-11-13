@@ -5,66 +5,55 @@ https://www.youtube.com/watch?v=m4nEnsavl6w Hangman Tutorial
 '''
 
 import random
-from Animals import word_list_animals_simple
-from Animals import word_list_animals_advanced
+from Color import category
 
 def get_word():
-    word = random.choice(word_list_animals_simple + word_list_animals_advanced)
+    print(f"\nSelect the category from the following list: {list(category.keys())}")
+    category_key = input("\nEnter the category name: ").lower()
+    word = random.choice(category[category_key])
     return word.lower()
 
-def play(word):
+def play(word, username):
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
-    wrong_letters = []
     guessed_words = []
     tries = 5
-
-    print("H A N G M A N")
-    username = input("Please enter name: ")
+    points = 0
+    print("H A N G M A N\n")
     print("Player:",username)
     print(display_hangman(tries))
-    print("Incorrect letters: ", " ".join(wrong_letters), "(",len(wrong_letters),")" )
-    print("\n")
     print(word_completion)
     print("\n")
     
     while not guessed and tries > 0:
-        guess = input("Select a valid character [a-z]: ").lower()
+        guess = input("Please guess a letter or word: ").lower()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already guessed the letter: {guess}")
-
             elif guess not in word:
-                print(f"{guess} is not in the word!")
+                print(f"{guess}, is not in the word!")
                 tries -= 1
                 guessed_letters.append(guess)
-                wrong_letters = guessed_letters
-                print("Incorrect letters: ", wrong_letters, "(",len(wrong_letters),")" )
-
             else:
                 print(f"Nice, {guess}, is in the word!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indexes = [i for i, letter in enumerate(word) if letter == guess]
+                points += 2
 
                 for index in indexes:
                     word_as_list[index] = guess
                 word_completion = "".join(word_as_list)
-
                 if "_" not in word_completion:
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(f"You already guessed the word: {guess}")
-
             elif guess != word:
                 print(f"{guess} is not the word.")
                 tries -= 1
                 guessed_words.append(guess)
-                wrong_letters = guessed_words
-                wrong_letters = " ".join(wrong_letters)
-
             else:
                 guess = True
                 word_completion = word
@@ -72,21 +61,17 @@ def play(word):
         else:
             print("Not a valid guess")
 
-        print("Player:",username)
         print(display_hangman(tries))
-        print("Incorrect letters: "," ".join(wrong_letters), "(",len(wrong_letters),")" )
+        print("Used letters: "," ".join(guessed_letters), "(",len(guessed_letters),")" )
         print("\n")
         print(word_completion)
         print("\n")
-        
     if guessed:
         print(f"Congratulations, The secret word is {word}. You win")
-
     else:
         print("Maximum number of guesses!")
-        # print("After", guessed_words" incorrect guesses and "guessed_letters" correct guess(es), the word was "word": Description here")
-        print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
-        print("*****")
+        print(f"After 5 incorrect guesses, The word was", word)
+    # return points
 
 def display_hangman(tries):
     stages = [  """
@@ -158,12 +143,17 @@ def display_hangman(tries):
     ]
     return stages[tries]
 
+def username():
+    username = input("Please enter name: ")
+    return username
+
 def main():
     word = get_word()
-    play(word)
+    username = input("Please enter name: ")
+    play(word, username)
     while input("Enter [Y]es to play again or [N] to quit: ").lower() == "y":
         word = get_word()
-        play(word)
+        play(word, username)
 
 if __name__ == "__main__":
     main()
