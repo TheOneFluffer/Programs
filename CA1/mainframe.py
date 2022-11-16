@@ -28,15 +28,11 @@ import random
 import re
 import datetime
 # import json
-from word_list import existing_words, new_words
+from word_list import words
+from Hangman_art import display_hangman_Easy, display_hangman_Normal, display_hangman_Hard
+from Scoreboard import Player_data
 #Allow for user input
 
-# def StartGame(players_no, player_name, chosen_difficulty):
-    # difficulty_settings = "" #Allows selection of difficulty   input("Please enter a difficulty:\n 1. Simple\n 2. Advanced\n > ")
-    # players = "" #Allows user to key in amount of players
-    # username = "" #Input player's name
-    # #logs what user has typed in
-    # options = ""
 # regexstr = "/^[a-zA-Z]+$/"
 #     while players_no < 1 and players_no == 0:
 #         try:
@@ -52,7 +48,7 @@ from word_list import existing_words, new_words
 #             print("Pls enter a number")
 
 def get_wordndef():
-    total_words = existing_words + new_words
+    total_words = words
     category_key = list((total_words.keys())) #simple is a dictionary
     word = (random.randint(0, len(category_key) - 1)) #generate random word
     rand_word = category_key[word]
@@ -68,7 +64,7 @@ def play(word, username, rand_word, rand_def):
     points = 0
     print("H A N G M A N\n")
     print("Player:",username)
-    print(display_hangman(tries))
+    print(display_hangman_Normal(tries))
     print(word_completion)
     print("\n")
     
@@ -107,7 +103,7 @@ def play(word, username, rand_word, rand_def):
         else:
             print("Not a valid guess")
 
-        print(display_hangman(tries))
+        print(display_hangman_Normal(tries))
         print("Used letters: "," ".join(guessed_letters), "(",len(guessed_letters),")" )
         print("\n")
         print(word_completion)
@@ -120,7 +116,7 @@ def play(word, username, rand_word, rand_def):
         print(f"After 5 incorrect guesses, The word was {rand_word}: {rand_def}")
     return points
 
-def display_hangman(tries):
+# def display_hangman(tries):
     stages = [  """
          _____
          |    |
@@ -193,6 +189,14 @@ def display_hangman(tries):
 def main():
     rand_word,rand_def = get_wordndef()
     username = input("Please enter name: ")
+    # difficulty_settings = input("Please select difficulty level:\n [1] Easy\n [2] Normal\n [3] Hard\n > ") #Allows selection of difficulty
+    # if difficulty_settings == 1:
+    #     tries = 10
+    # elif difficulty_settings == 2:
+    #     tries = 5
+    # elif difficulty_settings == 3:
+    #     tries = 3
+
     play(rand_word, username, rand_word, rand_def)
     while input("Enter [Y]es to play again or [N] to quit: ").lower() == "y":
         rand_word,rand_def = get_wordndef()
@@ -202,9 +206,8 @@ if __name__ == "__main__":
     main()
 
 def Hiscore():
-
     print("Hi-scores of other players: ")
-    
+   
 def Credits(Cont):
     print("\n")
     print(".-=~=-.                                                                 .-=~=-.")

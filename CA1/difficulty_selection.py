@@ -3,7 +3,7 @@ def select_difficulty():
     while isTrue:
         try:
             print("\nSelect difficulty level:\n  [1]Easy\n  [2]Standard\n  [3]Hard\n")
-            selection = input('Enter choice: ')
+            selection = input('>> ')
             selection = int(selection)
             match selection:
                 case 1:
