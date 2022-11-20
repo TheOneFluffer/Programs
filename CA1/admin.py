@@ -32,31 +32,64 @@ Credit:
 """
 
 #importing stuff
-
+import mainframe_admin as mainframe
+from word_list import words
 isFound = True
+
+def menu():
+    print("Welcome to the admin panel: \n 1. Add word \n 2. Delete word \n 3. Edit word \n 4. View logs \n 5. Exit")
+    selection = input('Enter choice: ')
+    return selection
+
+def check_word(checkWord):
+    for i in words.keys():
+        if i == checkWord:
+            return True
+
+def add_Word(status, addWord):
+    if status != True:
+        definition = input("Enter new definition of the word\n >> ").lower()
+        if definition == "":
+            print("Definition of the word cannot be empty!")
+            pass
+        else:
+            words[addWord] = definition
+            print("Word added!")
+            print(words)
+    else:
+        print(f"{addWord} already exists!")
+    
+    # else:
+    #     print("Please enter a word!")
 
 def Admin_panel():
     while isFound:
         try:
-            print("Welcome to the admin panel: \n 1. Add word \n 2. Delete word \n 3. Edit word \n 4. View logs \n 5. Exit")
-            selection = input('Enter choice: ')
+            selection = menu()
             selection = int(selection)
-            if selection != 5:
-                match selection:
-                    case 1:
-                        pass
-                    case 2:
-                        # mainframe.Hiscore()
-                        pass
-                    case 3:
-                        pass
-                    case 4:
-                        print("Men")
-                    case 5:
-                        print("Exit")
-                    case _:
-                        print("Please type in a selection within 1 to 4!")
-            else:
-                break
+            while selection != 5:
+                if selection == 1:
+                    status = False
+                    checkWord = input("Please enter a word\n >> ").lower()
+                    status = check_word(checkWord)
+                    add_Word(status, checkWord)
+                    selection = menu()
+                    selection = int(selection)
+                # match selection:
+                #     case "1":
+                #         status, checkWord = mainframe.check_word()
+                #         mainframe.add_Word(status, checkWord)
+                #         pass
+                #     case 2:
+                #         mainframe.Del_word(status)
+                #         pass
+                #     case 3:
+                #         pass
+                #     case 4:
+                #         print("Men")
+                #     case 5:
+                #         print("Exit")
+                #     case _:
+                #         print("Please type in a selection within 1 to 4!")
         except:
             print("Pls enter a number")
