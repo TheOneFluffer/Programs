@@ -31,32 +31,39 @@ Features needed:
 """
 
 #User selection screen
+import mainframe as mainframe
 import admin as admin
 
-# selection = ""
 choice = ""
+user_name = ""
+password = ""
 isFound = True
 
 while isFound:
     try:
-        print("Welcome to the hangman game: \n 1. Start Game \n 2. Show Hi-Score \n 3. Credits \n 4. Admin Login \n 5. Exit")
-        selection = input('Enter choice: ')
+        print("Welcome to the hangman game: \n 1. Start Game \n 2. Show Hi-Score \n 3. Credits \n 4. Login as Admin \n 5. Exit")
+        selection = input('>> ')
         selection = int(selection)
         if selection != 5:
             match selection:
                 case 1:
-                    admin.main()
+                    mainframe.main()
                 case 2:
-                    # admin.Hiscore()
+                    mainframe.Hiscore()
                     pass
                 case 3:
-                    # admin.Credits(choice)
-                    pass
-                    # print("Star walkinnn")
+                    mainframe.Credits(choice)
                 case 4:
-                    print("Men")
+                    user_name = input("Please enter your name \n >> ")
+                    password = input("Please enter your password \n >> ")
+                    if user_name == "admin" and password == "qQ1@":
+                        admin.Admin_panel()
+                    else:
+                        print("Username or Password is not valid!\n")
+
                 case 5:
                     print("Exit")
+                    break
                 case _:
                     print("Please type in a selection within 1 to 4!")
         else:
