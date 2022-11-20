@@ -7,9 +7,9 @@ Class: DISM/FT/1B/08
 Assessment: CA1-1
 
 Script name:
-    CA1-Hangman.py
+    admin.py
 Purpose:
-    Purpose of this script is for the hangman script to run properly as this will be imported from the client side
+    Purpose of this script is for the admin part of hangman script to run properly as this will be imported from the client side
 
 Usage syntax:
     Run with play button / command line, e.g. py Hangman.py
@@ -24,6 +24,7 @@ Python 3
 Features needed:
     Access control:
     Add, delete or edit:
+    Editing settings as well
     Report:
 
 Credit:
