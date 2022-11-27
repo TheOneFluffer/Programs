@@ -21,33 +21,25 @@ Features needed:
 Credit:
     https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c Hangman ASCII github
     https://www.youtube.com/watch?v=m4nEnsavl6w Hangman Tutorial
+    https://www.digitalocean.com/community/tutorials/python-add-to-dictionary Adding new words in dictionary
+    https://www.youtube.com/watch?v=jaNMhV_NhZE Adding new words in dictionary
 """
 
 #importing stuff
 import random
 import re
 import datetime
-# import json
+import json
 from word_list import words
-from Hangman_art import display_hangman_Easy, display_hangman_Normal, display_hangman_Hard
-from Scoreboard import Player_data
-#Allow for user input
-
-# regexstr = "/^[a-zA-Z]+$/"
-#     while players_no < 1 and players_no == 0:
-#         try:
-#             players_no = input("Please enter the amount of players: ")
-#             match players_no:
-#                 case 1:
-#                     username
-
-#                     except:
-#                         print("Please enter a name")
-
-#         except:
-#             print("Pls enter a number")
+#from Scoreboard import Player_data
+#functions are stored in the mainframe.py file. This file is called by both Hangman.py and admin.py
+#difficulty is based on how much lives you have, Easy = 10, Normal = 5, Hard = 3
 
 def get_wordndef():
+    """
+        get_wordndef: getting word and definition from wordlist
+        returns: random word and random definition in lowercase 
+    """
     total_words = words
     category_key = list((total_words.keys())) #simple is a dictionary
     word = (random.randint(0, len(category_key) - 1)) #generate random word
@@ -55,16 +47,25 @@ def get_wordndef():
     rand_def = total_words[rand_word]
     return rand_word.lower(), rand_def.lower()
 
-def play(word, username, rand_word, rand_def):
+def play(word, reduce_by, username, rand_def):
+    """
+        play: launch hangman game
+        Arguements:
+            word: get word from dictionary
+            username: get user's name for highscore purposes
+            rand_word: get word from previous function
+            rand_def: get definition from previous function
+        returns: Username, score
+    """
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 5
+    tries = 10
     points = 0
     print("H A N G M A N\n")
     print("Player:",username)
-    print(display_hangman_Normal(tries))
+    print(display_hangman_template(tries))
     print(word_completion)
     print("\n")
     
@@ -75,7 +76,7 @@ def play(word, username, rand_word, rand_def):
                 print(f"You already guessed the letter: {guess}")
             elif guess not in word:
                 print(f"{guess}, is not in the word!")
-                tries -= 1
+                tries -= reduce_by
                 guessed_letters.append(guess)
             else:
                 print(f"Nice, {guess}, is in the word!")
@@ -94,7 +95,7 @@ def play(word, username, rand_word, rand_def):
                 print(f"You already guessed the word: {guess}")
             elif guess != word:
                 print(f"{guess} is not the word.")
-                tries -= 1
+                tries -= reduce_by
                 guessed_words.append(guess)
             else:
                 guess = True
@@ -102,26 +103,36 @@ def play(word, username, rand_word, rand_def):
 
         else:
             print("Not a valid guess")
-
-        print(display_hangman_Normal(tries))
+        print(display_hangman_template(tries))
         print("Used letters: "," ".join(guessed_letters), "(",len(guessed_letters),")" )
         print("\n")
         print(word_completion)
         print("\n")
+
     if guessed:
         print(word, end=": ")# Print the key
-        print(f"Congratulations, You win! The secret word is {rand_word}: {rand_def}")
+        print(f"Congratulations, You win! The secret word is {word}: {rand_def}")
+
     else:
         print("Maximum number of guesses!")
-        print(f"After 5 incorrect guesses, The word was {rand_word}: {rand_def}")
-    return points
+        if reduce_by == 1:
+            print(f"After 10 incorrect guesses, The word was {word}: {rand_def}")
+        else:
+            print(f"After 5 incorrect guesses, The word was {word}: {rand_def}")
 
-# def display_hangman(tries):
+    if points < 15:
+        print("You lose")
+    else:
+        print
+    return points, username
+
+def display_hangman_template(tries):
     stages = [  """
          _____
          |    |
-         |    O
+         |   [O]
          |   /|\\
+         |    |
          |   / \\
         _|_
        |   |________
@@ -131,8 +142,9 @@ def play(word, username, rand_word, rand_def):
         """
          _____
          |    |
-         |    O
+         |   [O]
          |   /|\\
+         |    |
          |   / 
         _|_
        |   |________
@@ -142,19 +154,21 @@ def play(word, username, rand_word, rand_def):
         """
          _____
          |    |
-         |    O
+         |   [O]
+         |   /|\\
+         |    |
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |   [O]
          |   /|\\
          |   
-        _|_
-       |   |________
-       |            |
-       |____________|
-        """,
-        """
-         _____
-         |    |
-         |    O
-         |   /| 
          |
         _|_
        |   |________
@@ -164,9 +178,58 @@ def play(word, username, rand_word, rand_def):
         """
          _____
          |    |
-         |    O
+         |   [O]
+         |   /|
+         |
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |   [O]
          |    | 
          |
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |   [O]
+         |    
+         |
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |   [O
+         |     
+         |
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """,
+        """
+         _____
+         |    |
+         |    O
+         |     
+         |
+         |
         _|_
        |   |________
        |            |
@@ -176,38 +239,52 @@ def play(word, username, rand_word, rand_def):
          _____
          |    |
          |    
-         |    
+         | 
+         |   
          |
         _|_
        |   |________
        |            |
        |____________|
-         """
+        """,
+        """
+         _____
+         |    
+         |    
+         | 
+         |   
+         |
+        _|_
+       |   |________
+       |            |
+       |____________|
+        """
     ]
     return stages[tries]
+
+def difficulty():
+    reduce_by = 0
+    difficulty_settings = int(input("Please select difficulty level:\n [1] Easy\n [2] Standard\n> ")) #Allows selection of difficulty
+    if difficulty_settings == 1:
+        reduce_by = 1
+    elif difficulty_settings == 2:
+        reduce_by = 2
+    return reduce_by
 
 def main():
     rand_word,rand_def = get_wordndef()
     username = input("Please enter name: ")
-    # difficulty_settings = input("Please select difficulty level:\n [1] Easy\n [2] Normal\n [3] Hard\n > ") #Allows selection of difficulty
-    # if difficulty_settings == 1:
-    #     tries = 10
-    # elif difficulty_settings == 2:
-    #     tries = 5
-    # elif difficulty_settings == 3:
-    #     tries = 3
-
-    play(rand_word, username, rand_word, rand_def)
+    reduce_by = difficulty()
+    play(rand_word, reduce_by, username, rand_def)
     while input("Enter [Y]es to play again or [N] to quit: ").lower() == "y":
         rand_word,rand_def = get_wordndef()
-        play(rand_word, username, rand_word, rand_def)
-
-if __name__ == "__main__":
-    main()
+        play(rand_word, reduce_by, username, rand_def)
 
 def Hiscore():
     print("Hi-scores of other players: ")
-   
+    f = open("I:\Year 1 Sem 2\PSEC\Programs\CA1\Highscore.txt", "r") #To fix this, replace it with your own path
+    print(f.read())
+
 def Credits(Cont):
     print("\n")
     print(".-=~=-.                                                                 .-=~=-.")
