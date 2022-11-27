@@ -35,8 +35,8 @@ import mainframe as mainframe
 import admin as admin
 
 choice = ""
-user_name = ""
-password = ""
+user_name = "" #"admin"
+password = "" #"qQ1@"
 isFound = True
 
 while isFound:
@@ -44,24 +44,27 @@ while isFound:
         print("Welcome to the hangman game: \n 1. Start Game \n 2. Show Hi-Score \n 3. Credits \n 4. Login as Admin \n 5. Exit")
         selection = input('>> ')
         selection = int(selection)
+        # selection = 4
         if selection != 5:
             match selection:
-                case 1:
+                case 1: #start hangman game
                     mainframe.main()
-                case 2:
+
+                case 2: # Display hiscore
                     mainframe.Hiscore()
-                    pass
-                case 3:
+
+                case 3: # Display credits page
                     mainframe.Credits(choice)
-                case 4:
+
+                case 4: #Login as user, source code is located in admin.py
                     user_name = input("Please enter your name \n >> ")
                     password = input("Please enter your password \n >> ")
-                    if user_name == "admin" and password == "qQ1@":
+                    if user_name == "admin" and password == "qQ1@": #authenticator
                         admin.Admin_panel()
                     else:
                         print("Username or Password is not valid!\n")
 
-                case 5:
+                case 5: #Quit program
                     print("Exit")
                     break
                 case _:
