@@ -1,7 +1,5 @@
 def replace_substr(f_s1,f_s2,pos):
-  #  Insert your codes here
   f_s2 = f_s2.split(sep=" ")
-  # print(f_s2)
   pos = pos - 3
   for i in f_s2:
     if i == f_s2[pos]:
