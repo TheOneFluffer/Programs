@@ -11,3 +11,4 @@ def display_menu(menu):
 
 
 read_file("I:\Year 1 Sem 2\PSEC\Programs\P03\spams_menu.txt")
+display_menu()
