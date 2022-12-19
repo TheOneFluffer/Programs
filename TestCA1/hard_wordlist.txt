@@ -1,0 +1,12 @@
+Coyote:Coyotes are smaller than wolves that can adapt to life anywhere, even in cities
+Donkey:Donkeys come from the same family as the horse that are working animals
+Fennec:Fennec foxes are small foxes that are native to the deserts of North Africa
+Rabbit:Rabbits are the known as a wild prey animals or domesticated livestock and pet
+Monkey:Intelligent tree dwelling species that are extremely agile
+Turtle:Turtles are the reptiles that can live on land and swim
+Buffalo:Buffaloes are robust animals that are highly dangerous
+Cheetah:Cheetahs are the fastest land animals that can run up to 113 km per hour
+Dolphin:Dolphins are intelligent sea creatures that uses ultrasound to navigate under water
+Gorilla:Gorillas are ground-dwelling apes that are very large and strong
+Hamster:Hamsters are nocturnal animals that are omnivores that has a wide diet range, well known for being pets
+Difficult:Life in a nutshell

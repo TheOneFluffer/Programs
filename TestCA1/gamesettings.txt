@@ -1,0 +1,3 @@
+numberofattempts:3
+numberofwords:3
+numberoftopplayers:5

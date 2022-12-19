@@ -1,0 +1,16 @@
+Mon Dec 19 23:10:55 2022: Admin has logged in!
+Mon Dec 19 23:14:00 2022: Admin added new word: Primadonna and the definition is substitute princess to a new list: test_wordlist.txt
+Mon Dec 19 23:14:36 2022: Admin has added a new word to test_wordlist.txt. The word is Radioactive and the definition is Dangerous substance
+Mon Dec 19 23:15:22 2022: Admin has added a new word to test_wordlist.txt. The word is Bubblegumbitch and the definition is lol mistype
+Mon Dec 19 23:16:36 2022: Admin has edited the definition to Bubblegumbitch: The baddest bitch from test_wordlist.txt
+Mon Dec 19 23:18:55 2022: Admin has added a new word to test_wordlist.txt. The word is Fearandloathing and the definition is Longest damn song ever
+Mon Dec 19 23:19:28 2022: Admin has logged in!
+Mon Dec 19 23:20:51 2022: Oscar has logged in!
+Mon Dec 19 23:20:51 2022: Admin Logged off...
+Mon Dec 19 23:21:07 2022: The chosen words are: The 3 words are: Ape Cat Hare 
+Mon Dec 19 23:21:31 2022: Oscar scored 20 points
+Mon Dec 19 23:23:16 2022: Admin has logged in!
+Mon Dec 19 23:23:33 2022: Admin has deleted the word Fearandloathing from test_wordlist.txt
+Mon Dec 19 23:23:49 2022: Admin has logged in!
+Mon Dec 19 23:23:50 2022: Wdw has logged in!
+Mon Dec 19 23:23:50 2022: Admin Logged off...
