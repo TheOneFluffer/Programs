@@ -23,7 +23,7 @@ def validateUser(filename):
         if name != "":
             exists, namedict = readUserList(filename, name)
             gm.logOutToLogs(name + " has logged in!")
-            gm.logOutToReport(name + " has logged in")
+            gm.logOutToReport(name + " has logged in!")
             return name, exists, namedict
         else:
             print("Name cannot be empty!")
@@ -60,10 +60,12 @@ def playGreeting(name, exists, namedict):
                 score = namedict[i]
 
         print(f"\nWelcome back, {name}! Your highscore was: {score}")
-        gm.logOutToReport(f"name has logged in, score is {score}")
+        gm.logOutToLogs(f"{name} is playing hangman, score is {score}")
+        gm.logOutToReport(f"{name} is playing hangman, score is {score}")
     else:
         print(f"\nWelcome, {name}!")
-        gm.logOutToReport(f"name has logged in")
+        gm.logOutToLogs(f"{name} is playing hangman, score is 0")
+        gm.logOutToReport(f"{name} is playing hangman, score is 0")
 
     return score
 
@@ -108,6 +110,8 @@ def main():
                 elif choice == 3:
                     p.Credits()
             elif choice == 0:
+                gm.logOutToLogs(f"{name} logged out")
+                gm.logOutToReport(f"{name} logged out")
                 break
         elif name == "Admin":
             # show admin panel
@@ -115,15 +119,15 @@ def main():
             password = input(">> ")
             if (name == "Admin" and password == "qQ1@"):
                 name = a.adminPanel(name)
-                gm.logOutToLogs("Admin has logged in!")
+                gm.logOutToReport("Admin has logged in!")
             else:
                 print("Denied login as password is incorrect!\n")
                 name, exists, namedict = validateUser(filename)
-                gm.logOutToLogs("Denied login as password is incorrect!")
+                gm.logOutToReport("Denied login as password is incorrect!")
         elif name == None:
             print("Logging off from admin panel...")
             name, exists, namedict = validateUser(filename)
-            gm.logOutToLogs("Admin Logged off...")
+            gm.logOutToReport("Admin Logged off...")
         else:
             name, exists, namedict = validateUser(filename)
 

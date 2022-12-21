@@ -17,12 +17,12 @@ def logOutToLogs(logline):
     log_file = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\gamelog.txt"
     date_time = datetime.datetime.now()
     file = open(log_file, "a")  
-    file.write(date_time.strftime("%c: ") + logline + "\n")
+    file.write(date_time.strftime("%d/%m/%Y: ") + logline + "\n")
     file.close()
 
 def logOutToReport(logline):
     log_file = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\report.txt"
     date_time = datetime.datetime.now()
     file = open(log_file, "a")  
-    file.write(date_time.strftime("%x: ") + logline + "\n")
+    file.write(date_time.strftime("%d/%m/%Y:") + logline + "\n")
     file.close()

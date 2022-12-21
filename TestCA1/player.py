@@ -44,7 +44,6 @@ def getRandomWords(wordlist, wordsplayed, times):
 
     gm.logOutToLogs(f"The chosen words are: {words}")
     gm.logOutToReport(f"The chosen words are: {words}")
-
     return word, wordsplayed
 
 def startGame(gamesPlayed, word, wordlist, diff_choice, tries, points):
@@ -295,10 +294,14 @@ def checkHighScore(name, highscore, points, namedict, highscore_file):
     gm.logOutToReport(f"{name} scored {points} points")
     if points <= 15:
         print("Sorry, you have lost the game.")
+        gm.logOutToLogs(f"{name} lost the game")
+        gm.logOutToReport(f"{name} lost the game")
     elif points > highscore:
         updateHighscore(name, points, namedict, highscore_file)
     else:
         print("You have won the game.")
+        gm.logOutToLogs(f"{name} won the game")
+        gm.logOutToReport(f"{name} won the game")
 
 def updateHighscore(name, highscore, namedict, highscore_file):
     """ This method updates the score of the user in userlist.txt if they have a new highscore """
@@ -318,6 +321,7 @@ def updateHighscore(name, highscore, namedict, highscore_file):
             file.write(f"{i},{j}\n")
 
     print("You have won the game with a new highscore!")
+    gm.logOutToLogs(f"{name} won the game with a new highscore of: {highscore}")
     gm.logOutToReport(f"{name} won the game with a new highscore of: {highscore}")
 
 def playGame(name, highscore, namedict, highscore_file, gamesPlayed, wordlist, diff_choice):
@@ -369,8 +373,8 @@ def play(name, highscore, namedict, highscore_file, settings):
     diff_choice = 4
     wordlist = {}
     gamesPlayed = 1
-    simple_filename = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\simple_wordlist.txt"
-    hard_filename = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\hard_wordlist.txt"
+    simple_filename = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\simplewordlist.txt"
+    hard_filename = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\hardwordlist.txt"
 
     while (diff_choice != 0 and gamesPlayed < 3):
         diff_choice = playMenu()

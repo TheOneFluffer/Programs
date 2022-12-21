@@ -1,13 +1,84 @@
-12/12/21: Admin has logged in
-12/12/21: Oscar has logged in
-12/12/21: name has logged in
-12/16/21: The chosen words are: The 3 words are: Ape Cat Hare 
-12/16/21: Oscar scored 20 points
-12/16/21: Oscar won the game with a new highscore of: 20.
-12/17/21: Admin has logged in
-12/17/21: Wdw has logged in
-12/17/21: The chosen words are: The 3 words are: Ape Cat Hare 
-12/19/21: Oscar scored 20 points
-12/19/21: Oscar won the game with a new highscore of: 20.
-12/19/21: Admin has logged in
-12/19/21: Wdw has logged in
+12/12/2022:Leslie has logged in!
+14/12/2022:The chosen words are: The 3 words are: Elk Bull Wolf 
+14/12/2022:Leslie scored 18 points
+15/12/2022:The chosen words are: The 3 words are: Lion Bull Hare 
+15/12/2022:Leslie scored 24 points
+15/12/2022:Admin has logged in!
+15/12/2022:Admin has logged in!
+17/12/2022:No has logged in!
+17/12/2022:Admin Logged off...
+17/12/2022:Ken has logged in!
+17/12/2022:Ken has logged in!
+19/12/2022:Ken has logged in!
+19/12/2022:Ken has logged in!
+19/12/2022:The chosen words are: The 3 words are: Cat Hare Dog 
+19/12/2022:Ken scored 20 points
+20/12/2022:Admin has logged in!
+20/12/2022:Admin has logged in!
+20/12/2022:Ffe has logged in!
+20/12/2022:Admin Logged off...
+21/12/2022:Ken has logged in
+21/12/2022:Ken is playing hangman, score is 20
+21/12/2022:The chosen words are: The 3 words are: Cat Wolf Lion 
+21/12/2022:Ken scored 18 points
+21/12/2022:Ken logged out
+21/12/2022:Ken has logged in
+21/12/2022:Ken is playing hangman, score is 0
+21/12/2022:The chosen words are: The 3 words are: Fish Orca Elk 
+21/12/2022:Ken scored 16 points
+21/12/2022:Ken won the game with a new highscore of: 16
+21/12/2022:Ken logged out
+21/12/2022:Kenneth has logged in
+21/12/2022:Kenneth is playing hangman, score is 18
+21/12/2022:The chosen words are: The 3 words are: Dog Ape Bull 
+21/12/2022:Kenneth scored 20 points
+21/12/2022:Kenneth won the game with a new highscore of: 20
+21/12/2022:Kenneth logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in
+21/12/2022:Admin added new word:  and the definition is  to a new list: .txt
+21/12/2022:Admin has logged in!
+21/12/2022:Feqwf has logged in
+21/12/2022:Feqwf logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:Dwdw has logged in
+21/12/2022:Dwdw logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:Ef has logged in
+21/12/2022:Ef logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:Tryj has logged in
+21/12/2022:Tryj logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:Hgt has logged in
+21/12/2022:Hgt logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:Fef has logged in
+21/12/2022:Fef logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin added new word: Trial and the definition is trying to a new list: testwordlist.txt
+21/12/2022:Admin has added a new word to testwordlist.txt. The word is Boy and the definition is opposite of girl
+21/12/2022:Admin has added a new word to testwordlist.txt. The word is Men and the definition is 
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in
+21/12/2022:Admin has logged in!
+21/12/2022:W has logged in
+21/12/2022:W logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has edited the definition to Original: Present or existing from the beginning; first or earliest from hardwordlist.txt
+21/12/2022:Admin has logged in!
+21/12/2022:P has logged in
+21/12/2022:P logged out
+21/12/2022:Admin has logged in
+21/12/2022:Admin has deleted the word Original from hardwordlist.txt
+21/12/2022:Admin has logged in!
+21/12/2022:; has logged in
+21/12/2022:; logged out
+22/12/2022:Admin has logged in!
+22/12/2022:Admin has logged in!
+22/12/2022:Admin has logged in!
