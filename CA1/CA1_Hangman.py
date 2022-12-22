@@ -1,4 +1,36 @@
-import main as m
+"""
+Main program
+
+Student ID: p2241319
+Name: Lau Hong Wei
+Class: DISM/FT/1B/08
+Assessment: CA1-1
+
+Script name:
+    CA1-Hangman.py
+Purpose:
+    Purpose of this script is for users to choose from choices 1 to 3 and it will run appropriate functions assigned to it
+
+Usage syntax:
+    Run with play button / command line, e.g. py Hangman.py
+
+Input file:
+
+Output file:
+
+Python version:
+Python 3.11
+
+Features needed:
+    Player name:
+    Secret word:
+    Game word:
+    Score
+    Top X players
+    Game log
+"""
+
+import mainframe as m
 import generalMethods as gm
 import admin as a
 

@@ -9,22 +9,23 @@ Assessment: CA1-1
 Script name:
     admin.py
 Purpose:
-    Purpose of this script is for the admin part of hangman script to run properly as this will be imported from the client side
+    Purpose of this script is for the admin to edit the wordlist or the settings of the hangman script
 
 Usage syntax:
-    Run with play button / command line, e.g. py Hangman.py
+    Run with play button / command line, e.g. py CA1_Hangman.py
 
 Input file:
 
 Output file:
 
 Python version:
-Python 3
+Python 3.11
 
 Features needed:
     Access control:
     Add, delete or edit words in dictionary
-    Report
+    Print Report
+    Edit game settings
 
 Credit:
     https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c Hangman ASCII github

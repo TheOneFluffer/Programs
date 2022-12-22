@@ -1,0 +1,33 @@
+Hangman for admin
+
+To log in as admin, type in <Admin> and the default password is qQ1@
+Admin menu looks like this, there are 6 choices in total
+[1] Add a new word to a new list
+[2] Add a new word to an existing list
+[3] Edit a word in an existing list
+[4] Delete a word from an existing list
+[5] Read Report
+[6] Edit settings
+[0] Back to main menu
+
+[1] This option will ask you to type in a new word and a new definition to a new list
+
+[2]This option will ask you to type in a new word and a new definition to a new word to a selected existing list
+
+[3]This option will ask you which word to edit from a selected existing list
+
+[4]This option will ask you which word to delete from a selected existing list
+
+[5]This option will allow you to view the report
+
+[6] This option will allow you to edit the settings
+
+[0] Will return you back to the main menu
+
+!!!IMPORTANT NOTICE!!!
+For the game to work properly, you need to change all of the filepaths on all of the python files to make sure that the program
+functions normally
+
+To "factory reset" the game, you can clear all of the userlist.txt and the gamelog.txt
+
+Thank you for reading this list!!
