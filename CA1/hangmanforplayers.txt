@@ -1,0 +1,26 @@
+How to play hangman:
+The rules of the game are really simple, the player needs to guess the randomly chosen word from the game’s wordlist with a 
+set of tries depending on the chosen difficulty, Easy or standard (10 and 5 tries respectively). If the player guesses the 
+word correctly, they win the game. Else, they will lose and the answer and the description will be displayed to the player 
+regardless if the they win or lose
+
+Main menu looks like this, there are 4 choices in total
+[1] Play
+[2] Top players
+[3] Credits
+[0] Exit
+
+Play is to start the game as usual, the sub menu will ask if you want Easy or Standard difficulty in the game
+[1] Easy
+[2] Standard
+[0] Back to main menu
+
+Afterwards it will randomly choose some words and ask you to guess what it is
+
+Top players option will show you the top few users and their high scores
+
+Credits will display the credits page of the hangman project
+
+Exit will end the program
+
+Thank you for reading this list!!

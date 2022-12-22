@@ -1,0 +1,11 @@
+Jane,30
+Peter,4
+Molly,16
+Andy,20
+May,16
+Tom,12
+Jj,30
+Woo,16
+Ken,16
+Kenneth,20
+Joey,24
