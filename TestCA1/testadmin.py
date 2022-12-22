@@ -2,29 +2,74 @@ from datetime import datetime
 from datetime import *
 import generalMethods as gm
 
-def daterange(date1, date2):
-    for n in range(int ((date2 - date1).days)+1):
-        yield date1 + timedelta(n)
-
-def readReport():
-    print("\nReport reading")
-    print("[1] Print full report")
-    print("[2] Custom report")
+def editSetting():
+    '''This function allows admin to edit settings.txt'''
+    word_list = {}
+    gameSettings = "I:\Year 1 Sem 2\PSEC\Programs\CA1\gamesettings.txt"
+    print("~Settings Page~")
+    print("[1] Edit number of attempts")
+    print("[2] Edit the number of words")
+    print("[3] Edit the number of top players")
     print("[0] Exit")
     print("Enter your choice")
-    choice = gm.validateChoice(">> ", 0, 2)
+    choice = gm.validateChoice(">> ", 0, 3)
+    
+    if choice != 0:
+        if choice == 1:
+            '''This method allows users to edit number of attempts'''
+            with open(gameSettings) as f:
+                word_list = dict(i.rstrip().split(":", 1) for i in f)
+                editAttempt = input("Number of attempts (default: 3): ") or 3
+                if editAttempt != "":
+                    word_list["numberofattempts"] = int(editAttempt)
+                    with open(gameSettings, "w") as f:
+                        for key, value in word_list.items():
+                            f.write('%s:%s\n' % (key, value))
+                else:
+                    word_list["numberofattempts"] = editAttempt
+                    print("Number of attempts are unchanged")
+        
+        elif choice == 2:
+            '''This method allows users to edit number of words'''
+            with open(gameSettings) as f:
+                word_list = dict(i.rstrip().split(":", 1) for i in f)
+                editWords = input("Number of words per session (default: 3): ") or 3
+                if editWords != "":
+                    word_list["numberofwords"] = int(editWords)
+                    with open(gameSettings, "w") as f:
+                        for key, value in word_list.items():
+                            f.write('%s:%s\n' % (key, value))
+                else:
+                    word_list["numberofwords"] = editWords
+                    print("Number of words are unchanged")
+
+        elif choice == 3:
+            '''This method allows users to edit number of top players'''
+            with open(gameSettings) as f:
+                word_list = dict(i.rstrip().split(":", 1) for i in f)
+                editPlayers = input("Number of players to display (default: 5): ") or 5
+                if editPlayers != "":
+                    word_list["numberoftopplayers"] = int(editPlayers)
+                    with open(gameSettings, "w") as f:
+                        for key, value in word_list.items():
+                            f.write('%s:%s\n' % (key, value))
+                else:
+                    word_list["numberofwords"] = editPlayers
+                    print("Number of top players are unchanged")
+    else:
+        return
 
     if choice != 0:
         if choice == 1:
             '''This method reads and display reports'''
-            gameReport = r"I:\Year 1 Sem 2\PSEC\Programs\TestCA1\\report.txt"
+            gameReport = r"I:\Year 1 Sem 2\PSEC\Programs\CA1\\report.txt"
             f = open(gameReport, "r")
             for show in f:
                 print(show)
         
         elif choice == 2:
             '''The part is to print'''
-            gameReport = open("I:\Year 1 Sem 2\PSEC\Programs\TestCA1\\report.txt", "r")
+            gameReport = open("I:\Year 1 Sem 2\PSEC\Programs\CA1\\report.txt", "r")
             data = gameReport.read()
             report2List = data.split('\n')
             gameReport.close()
@@ -45,7 +90,7 @@ def readReport():
                     return
                 elif date1 < date2:
                     logs = ""
-                    readReport = open("I:\Year 1 Sem 2\PSEC\Programs\TestCA1\\report.txt", "r")
+                    readReport = open("I:\Year 1 Sem 2\PSEC\Programs\CA1\\report.txt", "r")
                     for i in readReport:
 
                         logDate = datetime.strptime(str(i[0:10]), '%d/%m/%Y').date()
@@ -55,4 +100,4 @@ def readReport():
     else:
         return
 
-readReport()
+editSetting()
